@@ -7,4 +7,6 @@
     <color name="secondary_blue">#0095E5</color>
     <color name="primary_yellow">#FFC300</color>
     <color name="white_color">#ffffff</color>
+    <color name="white_blur">#F4F5FC</color>
+    <color name="black">#000000</color>
 </resources>

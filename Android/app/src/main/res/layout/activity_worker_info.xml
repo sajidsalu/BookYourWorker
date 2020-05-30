@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:transitionName="profile"
+        android:background="@color/white_color"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context=".WorkerInfoActivity">
+
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/white_blur">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/worker"
+                app:sriv_left_bottom_corner_radius="5dip"
+                app:sriv_left_top_corner_radius="5dip"
+                app:sriv_oval="false"
+                app:sriv_right_bottom_corner_radius="5dip"
+                app:sriv_right_top_corner_radius="5dip"
+                android:layout_gravity="center"
+        />
+
+        <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_marginLeft="20dp"
+                android:lines="1"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Dave"
+                android:inputType="text"
+                android:layout_alignParentBottom="true"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+        />
+
+        <TextView
+                android:id="@+id/workType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:lines="1"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Mason"
+                android:inputType="text"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="20dp"
+                android:textSize="28sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+        />
+        <TextView
+                android:id="@+id/mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:layout_below="@+id/workType"
+                android:fontFamily="@font/roboto_regular"
+                android:text="10 Downing Street,London"
+                android:inputType="text"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="20dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+        />
+    </RelativeLayout>
+</RelativeLayout>
