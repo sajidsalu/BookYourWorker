@@ -9,4 +9,9 @@
     <color name="white_color">#ffffff</color>
     <color name="white_blur">#F4F5FC</color>
     <color name="black">#000000</color>
+    <color name="spinner_bg_color">#E8E8E8</color>
+    <color name="spinner_stroke_color">#DDDDDD</color>
+    <color name="off_white">#f8f8ff</color>
+    <color name="light_black">#696969</color>
+    <color name="screen_bg_white">#FDFDFD</color>
 </resources>

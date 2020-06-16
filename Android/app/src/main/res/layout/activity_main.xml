@@ -1,72 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white_color"
-        tools:context=".SplashActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".SplashActivity">
 
-    <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+        <LinearLayout
             android:id="@+id/card_view"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="-15dp"
+            android:layout_marginTop="-25dp"
             android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:elevation="10dp"
-            card_view:layout_constraintLeft_toLeftOf="parent"
-            card_view:layout_constraintRight_toRightOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            card_view:cardCornerRadius="0dp">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/imgMenu"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/rounded_title_bg"
+            android:orientation="vertical">
 
-        <RelativeLayout
-                android:background="@color/primary_blue"
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="55dp"
+                android:layout_gravity="top|center_vertical"
+                android:background="@color/primary_blue"
+                android:scaleType="fitCenter"
+                card_view:srcCompat="@drawable/brand" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    card_view:srcCompat="@drawable/brand"
-            />
+            <TextView
+                android:id="@+id/lblSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center|right"
+                android:paddingRight="15dp"
+                android:text="Find Workers, Anytime AnyWhere"
+                android:textAllCaps="true"
+                android:textColor="#8B21290F"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                    android:padding="10dp"
-                    android:scaleType="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    card_view:srcCompat="@drawable/ic_menu_white"
-            />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="15dp"
+        android:scaleType="center"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_white" />
 
 
     <TextView
-            android:id="@+id/lblNote"
+        android:id="@+id/lblNote"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Find Workers near you \nOr \nRegister yourself as a worker"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".30" />
+
+    <TextView
+        android:id="@+id/lblQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/oval_bg"
+        android:gravity="top"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp"
+        android:text="Looking for a worker ?"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:elevation="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideLine"
+        app:layout_constraintTop_toTopOf="@+id/guideLine"
+        app:layout_constraintTop_toBottomOf="@+id/lblNote" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/white_blue_yellow_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideLine">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layCategoryListing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:paddingTop="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/laySearch"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view"
-            android:layout_marginTop="20dp"
-            android:padding="10dp"
-            android:text="Find Workers near you \nOr \nRegister yourself as a worker"
-    />
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_categories"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lblNote"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"/>
+            app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:id="@+id/lblCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:elevation="2dp"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                android:paddingTop="12dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="15dp"
+                android:text="Search from various categories"
+                android:textColor="#ffffff"
+                android:textSize="17sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_categories"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblCategories" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/laySearch"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layCategoryListing">
+
+
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:padding="10dp"
+                card_view:cardBackgroundColor="@color/white_color"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:layout_constraintLeft_toLeftOf="parent"
+                card_view:layout_constraintRight_toRightOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/lblNothing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="top|left"
+                        android:elevation="5dp"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text="Select the type of work"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/layInputSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblNothing"
+                        android:background="@drawable/spinner_background"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtSearch"
+                            android:layout_width="150dp"
+                            android:layout_height="25dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toLeftOf="@+id/spnCategories"
+                            android:layout_toRightOf="@+id/imgSearchNews"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="Enter Type of Worker"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:textSize="12sp" />
+
+                        <Spinner
+                            android:id="@+id/spnCategories"
+                            android:layout_width="150dp"
+                            android:layout_height="35dp"
+                            android:layout_toLeftOf="@+id/imgDropDown"
+                            android:background="@color/spinner_bg_color"
+                            android:elevation="1dp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgDropDown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/spnCategories"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="4dp"
+                            android:elevation="5dp"
+                            card_view:srcCompat="@drawable/ic_arrow_drop_down_black"
+
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgSearchNews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/spnCategories"
+                            android:layout_alignParentLeft="true"
+                            android:layout_margin="4dp"
+                            android:elevation="5dp"
+                            card_view:srcCompat="@drawable/ic_search_news"
+
+                            />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/btnSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layInputSearch"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_search_bg"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Search"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="20sp"
+
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

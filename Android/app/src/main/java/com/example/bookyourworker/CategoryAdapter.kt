@@ -11,8 +11,10 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookyourworker.Model.Category
+import com.example.bookyourworker.Model.JobCategory
+import com.squareup.picasso.Picasso
 
-class CategoryAdapter(var context: Context, var list: List<Category>) :
+class CategoryAdapter(var context: Context, var list: List<JobCategory>,var callback:DashboardActivity.DTOCallBack) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
 
@@ -23,10 +25,6 @@ class CategoryAdapter(var context: Context, var list: List<Category>) :
 
         init {
             itemView.setOnClickListener {
-                //                val intent = Intent(context, WorkerListingActivity::class.java).apply{
-//                   putExtra("category",tvName)
-//                }
-//                context.startActivity(intent)
             }
         }
     }
@@ -43,19 +41,14 @@ class CategoryAdapter(var context: Context, var list: List<Category>) :
     override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
         list[position].run {
             try {
-                holder.tvName.text = name
-                //1->carpenter 2->electrician 3->plumber
-                when (type) {
-                    1 -> holder.ivImage.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.carpenter))
-                    2 -> holder.ivImage.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.electrician))
-                    3 -> holder.ivImage.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.plumber))
-                    4 -> holder.ivImage.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.mason))
-                }
+                holder.tvName.text = jobCategoryTitle
+                Picasso.with(context).load(imgPath.toString()).placeholder(R.drawable.no_image_available).into(holder.ivImage)
                 holder.layContent.setOnClickListener {
-                    val intent = Intent(context, WorkerListingActivity::class.java).apply {
-                        putExtra("category", name)
-                    }
-                    context.startActivity(intent)
+//                    val intent = Intent(context, WorkerListingActivity::class.java).apply {
+//                        putExtra("category", jobCategoryTitle)
+//                    }
+//                    context.startActivity(intent)
+                    callback.onClick(position)
                 }
 
             } catch (ex: Exception) {
